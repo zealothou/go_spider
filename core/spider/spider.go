@@ -321,8 +321,8 @@ func (this *Spider) AddRequest(req *request.Request) *Spider {
 		return this
 	}
 
-	if this.onBeforeRequest != nil {
-		this.onBeforeRequest(req)
+	if this.beforeRequest != nil {
+		this.beforeRequest(req)
 	}
 
 	this.pScheduler.Push(req)
@@ -380,5 +380,5 @@ func (this *Spider) pageProcess(req *request.Request) {
 }
 
 func (this *Spider) onBeforeRequest(callback BeforeRequest) {
-	this.onBeforeRequest = callback
+	this.beforeRequest = callback
 }
