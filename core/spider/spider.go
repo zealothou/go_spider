@@ -379,6 +379,7 @@ func (this *Spider) pageProcess(req *request.Request) {
 	}
 }
 
-func (this *Spider) OnBeforeRequest(callback BeforeRequest) {
+func (this *Spider) OnBeforeRequest(callback BeforeRequest) *Spider {
 	this.beforeRequest = callback
+	return this
 }
